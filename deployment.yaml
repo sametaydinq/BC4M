@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: bc4m
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: bc4m
+  template:
+    metadata:
+      labels:
+        app: bc4m
+    spec:
+      containers:
+      - name: api
+        image: sametaydinq/bestcloudforme:latest
+        ports:
+        - containerPort: 2000
